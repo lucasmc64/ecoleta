@@ -41,3 +41,32 @@ Para rodar esse script, no terminal, digite: `npm run dev`
 Para criar uma aplicação com ReactJS com TypeScript:
 
 `npx create-react-app nome-do-projeto --template=typescript`
+
+
+
+## Aula 2
+
+O express não entende o recebimento de informações em formato JSON. Para resolver isso:
+
+```javascript
+server.use(express.json());
+```
+
+Biblioteca Knex.JS -> `npm install knex`
+
+Rota: endereço completo da requisição
+Recurso: qual entidade estamos acessando do sistema
+
+Métodos HTTP
+GET: Buscar uma ou mais informações do back-end
+POST: Criar uma nova informação no back-end
+PUT: Atualizar uma informação existente no back-end
+DELETE: Remover uma informação do back-end
+
+Tipos de Parâmetros
+Request Param: Parâmetros que vêm na própria rota que identificam um recurso (request.param)
+Query Param: Parâmetros que vêm na própria rota geralmente opcionais para filtros, paginação
+Request Body: Parâmetros para criação/atualização de usuários
+
+
+`item.trim()` -> Com `item` sendo uma String, o método `trim()` retira os espaços antes e depois dela, cajo haja.
