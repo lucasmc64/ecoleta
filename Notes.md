@@ -70,3 +70,11 @@ Request Body: Parâmetros para criação/atualização de usuários
 
 
 `item.trim()` -> Com `item` sendo uma String, o método `trim()` retira os espaços antes e depois dela, cajo haja.
+
+## Aula 3
+
+JSX: Sintaxe de XML dentro do JavaScript
+
+Sempre que mudamos o estado de um objeto ou array precisamos informar o tipo da variável que está sendo armazenada lá dentro.
+
+https://github.com/typescript-cheatsheets/react-typescript-cheatsheet
