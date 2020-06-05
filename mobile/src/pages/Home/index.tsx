@@ -1,19 +1,75 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Feather as Icon } from '@expo/vector-icons';
 import { View, Image, ImageBackground, StyleSheet, Text, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import RNPickerSelect from 'react-native-picker-select';
+import axios from 'axios';
+import { Ionicons } from '@expo/vector-icons';
+interface Option {
+    label: string,
+    value: string,
+}
+interface IBGEUFResponse {
+    sigla: string;
+}
+
+interface IBGECityResponse {
+    nome: string;
+}
 
 const Home = () => {
-    const [uf, setUf] = useState('');
-    const [city, setCity] = useState('');
+    const [selectedUf, setSelectedUf] = useState('');
+    const [selectedCity, setSelectedCity] = useState('');
+
+    const [optionsUf, setOptionsUf] = useState<Option[]>([]);
+    const [optionsCity, setOptionsCity] = useState<Option[]>([]);
+
+    const optionsUfPlaceholder = { label: 'Selecione uma UF...', value: null }
+    const optionsCityPlaceholder = { label: 'Selecione uma cidade...', value: null }
 
     const navigation = useNavigation();
 
+    useEffect(() => {
+        axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then((response) => {
+            const ufs = response.data.map((uf) => uf.sigla);
+
+            const optionsUf = ufs.map((uf) => {
+                return {
+                    label: uf,
+                    value: uf,
+                };
+            });
+
+            setOptionsUf(optionsUf);
+        });
+    }, []);
+
+    useEffect(() => {
+        if (selectedUf === '') {
+            return;
+        }
+
+        axios.get<IBGECityResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`).then((response) => {
+            const cities = response.data.map((city) => city.nome);
+
+            const optionsCity = cities.map((city) => {
+                return {
+                    label: city,
+                    value: city,
+                    
+                };
+            });
+
+            setOptionsCity(optionsCity);
+        });
+    }, [selectedUf]);
+
     function handleNavigateToPoints() {
+        console.log(selectedUf, selectedCity);
         navigation.navigate('Points', {
-            uf,
-            city,
+            selectedUf,
+            selectedCity,
         });
     }
 
@@ -29,8 +85,26 @@ const Home = () => {
                 </View>
 
                 <View style={styles.footer}>
-                    <TextInput style={styles.input} placeholder="Digite a UF" value={uf} maxLength={2} autoCapitalize="characters" autoCorrect={false} onChangeText={(text) => setUf(text)} />
-                    <TextInput style={styles.input} placeholder="Digite a Cidade" value={city} autoCorrect={false} onChangeText={(text) => setCity(text)} />
+                    <RNPickerSelect
+                        style={pickerSelectStyles}
+                        useNativeAndroidPickerStyle={false}
+                        placeholder={optionsUfPlaceholder}
+                        onValueChange={(value) => setSelectedUf(value)}
+                        items={optionsUf}
+                        Icon={() => {
+                            return <Ionicons name="md-arrow-down" size={20} color="gray" />;
+                        }}
+                    />
+                    <RNPickerSelect
+                        style={pickerSelectStyles}
+                        useNativeAndroidPickerStyle={false}
+                        placeholder={optionsCityPlaceholder}
+                        onValueChange={(value) => setSelectedCity(value)}
+                        items={optionsCity}
+                        Icon={() => {
+                            return <Ionicons name="md-arrow-down" size={20} color="gray" />;
+                        }}
+                    />
 
                     <RectButton style={styles.button} onPress={handleNavigateToPoints}>
                         <View style={styles.buttonIcon}>
@@ -78,8 +152,6 @@ const styles = StyleSheet.create({
 
     footer: {},
 
-    select: {},
-
     input: {
         height: 60,
         backgroundColor: '#FFF',
@@ -114,6 +186,36 @@ const styles = StyleSheet.create({
         color: '#FFF',
         fontFamily: 'Roboto_500Medium',
         fontSize: 16,
+    }
+});
+
+const pickerSelectStyles = StyleSheet.create({
+    inputIOS: {
+        borderWidth: 1,
+        height: 60,
+        backgroundColor: '#FFF',
+        borderRadius: 10,
+        marginBottom: 8,
+        paddingHorizontal: 24,
+        fontSize: 16,
+    },
+    inputAndroid: {
+        color: 'gray',
+        height: 60,
+        borderColor: 'rgba(0, 0, 0, 0.1)',
+        borderWidth: 1,
+        borderRadius: 10,
+        marginBottom: 8,
+        paddingHorizontal: 24,
+        fontSize: 16,
+        backgroundColor: '#FFF',
+    },
+    iconContainer: {
+        top: 20,
+        right: 15,
+    },
+    placeholder: {
+        color: 'gray',
     }
 });
 
