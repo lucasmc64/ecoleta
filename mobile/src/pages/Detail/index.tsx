@@ -15,6 +15,7 @@ interface Params {
 interface Data {
     point: {
         image: string;
+        image_url: string;
         name: string;
         email: string;
         whatsapp: string;
@@ -66,7 +67,7 @@ const Detail = () => {
                     <Icon name="arrow-left" size={20} color="#34CB79" />
                 </TouchableOpacity>
 
-                <Image style={styles.pointImage} source={{ uri: data.point.image }} />
+                <Image style={styles.pointImage} source={{ uri: data.point.image_url }} />
 
                 <Text style={styles.pointName}>
                     {data.point.name}
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
 
     pointImage: {
         width: '100%',
-        height: 120,
+        height: 200,
         resizeMode: 'cover',
         borderRadius: 10,
         marginTop: 32,

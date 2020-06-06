@@ -79,6 +79,19 @@ Sempre que mudamos o estado de um objeto ou array precisamos informar o tipo da 
 
 https://github.com/typescript-cheatsheets/react-typescript-cheatsheet
 
-## Aula 3
+## Aula 4
 
 Por que duas chaves? A primeira chave significa que é código JS e a segunda chave que é um objeto.
+
+## Aula 5
+
+### Backend
+
+- [ ] Heroku
+- [ ] Digital Ocean
+
+### Frontend
+
+- [ ] Netlify
+- [ ] Vercel
+

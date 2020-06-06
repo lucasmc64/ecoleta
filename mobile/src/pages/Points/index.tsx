@@ -6,6 +6,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, Alert } fr
 import MapView, { Marker } from 'react-native-maps';
 import { SvgUri } from 'react-native-svg';
 import * as Location from 'expo-location';
+
 import api from '../../services/api';
 
 interface Item {
@@ -17,6 +18,7 @@ interface Item {
 interface Point {
     id: number;
     image: string;
+    image_url: string;
     name: string;
     longitude: number;
     latitude: number;
@@ -37,7 +39,7 @@ const Points = () => {
     const navigation = useNavigation();
     const route = useRoute();
 
-    const routeParams= route.params as Params;
+    const routeParams = route.params as Params;
 
     useEffect(() => {
         async function loadPosition() {
@@ -107,12 +109,13 @@ const Points = () => {
                 </TouchableOpacity>
 
                 <Text style={styles.title}>
+                    &#128515;
                     Bem vindo.
-            </Text>
+                </Text>
 
                 <Text style={styles.description}>
                     Encontre no mapa um ponto de coleta.
-            </Text>
+                </Text>
 
                 <View style={styles.mapContainer}>
                     {initialPosition[0] !== 0 && (
@@ -120,7 +123,7 @@ const Points = () => {
                             {points.map((point) => (
                                 <Marker key={String(point.id)} style={styles.mapMarker} onPress={() => handleNavigateToDetail(point.id)} coordinate={{ latitude: point.latitude, longitude: point.longitude }}>
                                     <View style={styles.mapMarkerContainer}>
-                                        <Image style={styles.mapMarkerImage} source={{ uri: point.image }} />
+                                        <Image style={styles.mapMarkerImage} source={{ uri: point.image_url }} />
                                         <Text style={styles.mapMarkerTitle}>{point.name}</Text>
                                     </View>
                                 </Marker>
@@ -134,7 +137,7 @@ const Points = () => {
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 32 }} >
 
                     {items.map((item) => (
-                        <TouchableOpacity key={String(item.id)} activeOpacity={0.55} style={[styles.item, selectedItems.includes(item.id) ? styles.selectedItem : {}]} onPress={() => handleSelectItem(item.id)}>
+                        <TouchableOpacity key={String(item.id)} activeOpacity={0.55} style={[styles.item, selectedItems.includes(item.id) ? styles.selectedItem : {}, items[items.length - 1].id === item.id ? styles.lastItem : {}]} onPress={() => handleSelectItem(item.id)}>
                             <SvgUri width={42} height={42} uri={item.image_url} />
                             <Text style={styles.itemTitle}>{item.title}</Text>
                         </TouchableOpacity>
@@ -237,6 +240,10 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
 
         textAlign: 'center',
+    },
+
+    lastItem: {
+        marginRight: 0,
     },
 
     selectedItem: {

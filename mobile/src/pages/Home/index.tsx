@@ -5,7 +5,7 @@ import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import RNPickerSelect from 'react-native-picker-select';
 import axios from 'axios';
-import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 interface Option {
     label: string,
     value: string,
@@ -85,6 +85,7 @@ const Home = () => {
                 </View>
 
                 <View style={styles.footer}>
+                    <View style={styles.selectsContainer}>
                     <RNPickerSelect
                         style={pickerSelectStyles}
                         useNativeAndroidPickerStyle={false}
@@ -92,7 +93,7 @@ const Home = () => {
                         onValueChange={(value) => setSelectedUf(value)}
                         items={optionsUf}
                         Icon={() => {
-                            return <Ionicons name="md-arrow-down" size={20} color="gray" />;
+                            return <FontAwesome name="chevron-down" size={20} color="#A0A0B2" />;
                         }}
                     />
                     <RNPickerSelect
@@ -102,9 +103,10 @@ const Home = () => {
                         onValueChange={(value) => setSelectedCity(value)}
                         items={optionsCity}
                         Icon={() => {
-                            return <Ionicons name="md-arrow-down" size={20} color="gray" />;
+                            return <FontAwesome name="chevron-down" size={20} color="#A0A0B2" />;
                         }}
                     />
+                    </View>
 
                     <RectButton style={styles.button} onPress={handleNavigateToPoints}>
                         <View style={styles.buttonIcon}>
@@ -151,6 +153,10 @@ const styles = StyleSheet.create({
     },
 
     footer: {},
+    
+    selectsContainer: {
+        marginBottom: 16,
+    },
 
     input: {
         height: 60,
@@ -191,31 +197,29 @@ const styles = StyleSheet.create({
 
 const pickerSelectStyles = StyleSheet.create({
     inputIOS: {
-        borderWidth: 1,
+        color: '#A0A0B2',
         height: 60,
-        backgroundColor: '#FFF',
         borderRadius: 10,
         marginBottom: 8,
         paddingHorizontal: 24,
         fontSize: 16,
+        backgroundColor: '#FFFFFF',
     },
     inputAndroid: {
-        color: 'gray',
+        color: '#A0A0B2',
         height: 60,
-        borderColor: 'rgba(0, 0, 0, 0.1)',
-        borderWidth: 1,
         borderRadius: 10,
         marginBottom: 8,
         paddingHorizontal: 24,
         fontSize: 16,
-        backgroundColor: '#FFF',
+        backgroundColor: '#FFFFFF',
     },
     iconContainer: {
         top: 20,
         right: 15,
     },
     placeholder: {
-        color: 'gray',
+        color: '#A0A0B2',
     }
 });
 
