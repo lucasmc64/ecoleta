@@ -6,6 +6,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, Alert } fr
 import MapView, { Marker } from 'react-native-maps';
 import { SvgUri } from 'react-native-svg';
 import * as Location from 'expo-location';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import api from '../../services/api';
 
@@ -138,9 +139,11 @@ const Points = () => {
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 32 }} >
 
                     {items.map((item) => (
-                        <TouchableOpacity key={String(item.id)} activeOpacity={0.55} style={[styles.item, selectedItems.includes(item.id) ? styles.selectedItem : {}, items[items.length - 1].id === item.id ? styles.lastItem : {}]} onPress={() => handleSelectItem(item.id)}>
-                            <SvgUri width={42} height={42} uri={item.image_url} />
-                            <Text style={styles.itemTitle}>{item.title}</Text>
+                        <TouchableOpacity key={String(item.id)} activeOpacity={0.55} style={[styles.itemButton, selectedItems.includes(item.id) ? styles.selectedItem : {}, items[items.length - 1].id === item.id ? styles.lastItem : {}]} onPress={() => handleSelectItem(item.id)}>
+                            <LinearGradient colors={['#FFFFFF', selectedItems.includes(item.id) ? '#E1FAEC' : '#FFFFFF']} style={styles.itemBackground}>
+                                <SvgUri width={42} height={42} uri={item.image_url} />
+                                <Text style={styles.itemTitle}>{item.title}</Text>
+                            </LinearGradient>
                         </TouchableOpacity>
                     ))}
 
@@ -242,21 +245,27 @@ const styles = StyleSheet.create({
         marginBottom: 32,
     },
 
-    item: {
+    itemButton: {
         backgroundColor: '#fff',
         borderWidth: 2,
         borderColor: '#eee',
         height: 120,
         width: 120,
         borderRadius: 8,
-        paddingHorizontal: 16,
         paddingTop: 20,
-        paddingBottom: 16,
         marginRight: 8,
         alignItems: 'center',
         justifyContent: 'space-between',
 
         textAlign: 'center',
+    },
+
+    itemBackground: {
+        height: '100%',
+        width: '100%',
+        borderRadius: 8,
+        paddingHorizontal: 16,
+        alignItems: 'center',
     },
 
     lastItem: {
