@@ -6,10 +6,12 @@ import { useNavigation } from '@react-navigation/native';
 import RNPickerSelect from 'react-native-picker-select';
 import axios from 'axios';
 import { FontAwesome } from '@expo/vector-icons';
+
 interface Option {
     label: string,
     value: string,
 }
+
 interface IBGEUFResponse {
     sigla: string;
 }
@@ -31,7 +33,7 @@ const Home = () => {
     const navigation = useNavigation();
 
     useEffect(() => {
-        axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then((response) => {
+        axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome').then((response) => {
             const ufs = response.data.map((uf) => uf.sigla);
 
             const optionsUf = ufs.map((uf) => {
@@ -86,26 +88,26 @@ const Home = () => {
 
                 <View style={styles.footer}>
                     <View style={styles.selectsContainer}>
-                    <RNPickerSelect
-                        style={pickerSelectStyles}
-                        useNativeAndroidPickerStyle={false}
-                        placeholder={optionsUfPlaceholder}
-                        onValueChange={(value) => setSelectedUf(value)}
-                        items={optionsUf}
-                        Icon={() => {
-                            return <FontAwesome name="chevron-down" size={20} color="#A0A0B2" />;
-                        }}
-                    />
-                    <RNPickerSelect
-                        style={pickerSelectStyles}
-                        useNativeAndroidPickerStyle={false}
-                        placeholder={optionsCityPlaceholder}
-                        onValueChange={(value) => setSelectedCity(value)}
-                        items={optionsCity}
-                        Icon={() => {
-                            return <FontAwesome name="chevron-down" size={20} color="#A0A0B2" />;
-                        }}
-                    />
+                        <RNPickerSelect
+                            style={pickerSelectStyles}
+                            useNativeAndroidPickerStyle={false}
+                            placeholder={optionsUfPlaceholder}
+                            onValueChange={(value) => setSelectedUf(value)}
+                            items={optionsUf}
+                            Icon={() => {
+                                return <FontAwesome name="chevron-down" size={20} color="#A0A0B2" />;
+                            }}
+                        />
+                        <RNPickerSelect
+                            style={pickerSelectStyles}
+                            useNativeAndroidPickerStyle={false}
+                            placeholder={optionsCityPlaceholder}
+                            onValueChange={(value) => setSelectedCity(value)}
+                            items={optionsCity}
+                            Icon={() => {
+                                return <FontAwesome name="chevron-down" size={20} color="#A0A0B2" />;
+                            }}
+                        />
                     </View>
 
                     <RectButton style={styles.button} onPress={handleNavigateToPoints}>
@@ -116,7 +118,7 @@ const Home = () => {
                         </View>
                         <Text style={styles.buttonText}>
                             Entrar
-                    </Text>
+                        </Text>
                     </RectButton>
                 </View>
             </ImageBackground>
@@ -168,18 +170,20 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        backgroundColor: '#34CB79',
         height: 60,
         flexDirection: 'row',
-        borderRadius: 10,
+        borderRadius: 8,
         overflow: 'hidden',
         alignItems: 'center',
         marginTop: 8,
+        backgroundColor: '#34CB79',
     },
 
     buttonIcon: {
         height: 60,
         width: 60,
+        borderTopLeftRadius: 8,
+        borderBottomLeftRadius: 8,
         backgroundColor: 'rgba(0, 0, 0, 0.1)',
         justifyContent: 'center',
         alignItems: 'center'
@@ -199,7 +203,7 @@ const pickerSelectStyles = StyleSheet.create({
     inputIOS: {
         color: '#A0A0B2',
         height: 60,
-        borderRadius: 10,
+        borderRadius: 8,
         marginBottom: 8,
         paddingHorizontal: 24,
         fontSize: 16,
@@ -208,7 +212,7 @@ const pickerSelectStyles = StyleSheet.create({
     inputAndroid: {
         color: '#A0A0B2',
         height: 60,
-        borderRadius: 10,
+        borderRadius: 8,
         marginBottom: 8,
         paddingHorizontal: 24,
         fontSize: 16,

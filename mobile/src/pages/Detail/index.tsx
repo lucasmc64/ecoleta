@@ -63,8 +63,8 @@ const Detail = () => {
     return (
         <SafeAreaView style={{ flex: 1 }} >
             <View style={styles.container}>
-                <TouchableOpacity onPress={(handleNavigateBack)}>
-                    <Icon name="arrow-left" size={20} color="#34CB79" />
+                <TouchableOpacity style={styles.iconBackContainer} onPress={(handleNavigateBack)}>
+                    <Icon name="arrow-left" size={24} color="#34CB79" />
                 </TouchableOpacity>
 
                 <Image style={styles.pointImage} source={{ uri: data.point.image_url }} />
@@ -103,6 +103,10 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 32,
         paddingTop: 20 + Constants.statusBarHeight,
+    },
+
+    iconBackContainer: {
+        width: 24,
     },
 
     pointImage: {

@@ -104,8 +104,8 @@ const Points = () => {
     return (
         <>
             <View style={styles.container}>
-                <TouchableOpacity onPress={handleNavigateBack}>
-                    <Icon name="log-out" style={styles.iconBack} size={20} color="#34CB79" />
+                <TouchableOpacity style={styles.iconBackContainer} onPress={handleNavigateBack}>
+                    <Icon name="log-out" style={styles.iconBack} size={24} color="#34CB79" />
                 </TouchableOpacity>
 
                 <Text style={styles.title}>
@@ -126,6 +126,7 @@ const Points = () => {
                                         <Image style={styles.mapMarkerImage} source={{ uri: point.image_url }} />
                                         <Text style={styles.mapMarkerTitle}>{point.name}</Text>
                                     </View>
+                                    <View style={styles.mapPinMarker} />
                                 </Marker>
                             ))}
                         </MapView>
@@ -163,11 +164,15 @@ const styles = StyleSheet.create({
         marginTop: 24,
     },
 
+    iconBackContainer: {
+        width: 24,
+    },
+
     iconBack: {
         alignSelf: "flex-start",
         transform: [
             { rotate: '180deg' }
-        ]
+        ],
     },
 
     description: {
@@ -217,6 +222,18 @@ const styles = StyleSheet.create({
         color: '#FFF',
         fontSize: 13,
         lineHeight: 23,
+    },
+
+    mapPinMarker: {
+        width: 10,
+        height: 10,
+        alignSelf: 'center',
+        transform: [
+            { rotate: '45deg' }
+        ],
+        marginTop: -(5 * Math.sqrt(2)),
+        backgroundColor: '#34CB79',
+        overflow: 'hidden',
     },
 
     itemsContainer: {
