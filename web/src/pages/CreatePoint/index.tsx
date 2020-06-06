@@ -1,6 +1,6 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import { FiArrowLeft, FiCheckCircle } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import axios from 'axios';
 import { LeafletMouseEvent } from 'leaflet';
@@ -47,6 +47,7 @@ const CreatePoint = () => {
 
     const [selectedFile, setSelectedFile] = useState<File>();
 
+    const [done, setDone] = useState(false);
     const history = useHistory();
 
     useEffect(() => {
@@ -146,12 +147,13 @@ const CreatePoint = () => {
 
         await api.post('points', data);
 
-        alert('Ponto de coleta criado!');
+        setDone(true);
 
-        history.push('/')
+        setTimeout(() => { history.push('/') }, 2000);
     }
 
     return (
+        <>
         <div id="page-create-point">
             <header>
                 <img src={logo} alt="Ecoleta" />
@@ -244,9 +246,16 @@ const CreatePoint = () => {
                     </ul>
                 </fieldset>
 
-                <button type="submit">Cadastrar ponto de coleta</button>
+                <button type="submit">Cadastrar ponto de coleta</button> 
             </form>
         </div>
+
+        <div className={done ? "modal-overlay active" : "modal-overlay"}>
+            <FiCheckCircle size={64} color="#34CB79" />
+            <p>Cadastro concluído!</p>
+        </div>
+        </>
+
     );
 };
 

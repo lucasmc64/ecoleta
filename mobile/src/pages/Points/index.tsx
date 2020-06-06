@@ -140,7 +140,7 @@ const Points = () => {
 
                     {items.map((item) => (
                         <TouchableOpacity key={String(item.id)} activeOpacity={0.55} style={[styles.itemButton, selectedItems.includes(item.id) ? styles.selectedItem : {}, items[items.length - 1].id === item.id ? styles.lastItem : {}]} onPress={() => handleSelectItem(item.id)}>
-                            <LinearGradient colors={['#FFFFFF', selectedItems.includes(item.id) ? '#E1FAEC' : '#FFFFFF']} style={styles.itemBackground}>
+                            <LinearGradient colors={[selectedItems.includes(item.id) ? '#FFFFFF' : '#E1FAEC', '#E1FAEC']} style={styles.itemBackground}>
                                 <SvgUri width={42} height={42} uri={item.image_url} />
                                 <Text style={styles.itemTitle}>{item.title}</Text>
                             </LinearGradient>
