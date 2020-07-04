@@ -2,11 +2,18 @@
 
 # Ecoleta &#9851;
 
-*Esse foi um projeto desenvolvido durante a Next Level Week #01 (Booster).* | [Protótipo](https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/Ecoleta)
+*Esse foi um projeto desenvolvido durante a Next Level Week #01 (Booster).*
 
 ## O que é a Next Level Week? &#128640;
 
 A [NLW](https://nextlevelweek.com/) é uma semana programada pela [Rocketseat](https://rocketseat.com.br/) na qual, através de aulas, lives, prática e com apoio da comunidade, vai te ajudar a dar o próximo passo na sua evolução como dev.
+
+## Qual a diferença entre Booster e Starter? &#9968;
+
+A NLW oferece duas frentes diferentes de acordo com conhecimento do aluno. 
+
+* O caminho “Starter” é para aqueles que estão no começo do aprendizado em desenvolvimento;
+* O caminho “Booster” é para aqueles que estão dispostos a ir um pouco mais além e que tem mais conceitos de desenvolvimento fixados. 
 
 ## Objetivo &#127919;
 
@@ -125,9 +132,10 @@ Nada foi alterado no backend.
 
 #### No Frontend &#10024;
 
-* Mudança da cor dos botões de items de coleta;
-* Gradiente nos botões de items de coleta quando selecionados;
-* Modal de conclusão de cadastro de ponto de coleta.
+- [x] {c:red} Mudança da cor dos botões de items de coleta; {/c}
+
+- [X] Gradiente nos botões de items de coleta quando selecionados;
+- [X] Modal de conclusão de cadastro de ponto de coleta.
 
 #### No Mobile &#128241;
 
