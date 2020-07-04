@@ -132,25 +132,25 @@ Nada foi alterado no backend.
 
 #### No Frontend &#10024;
 
-- [x] {c:red} Mudança da cor dos botões de items de coleta; {/c}
-
-- [X] Gradiente nos botões de items de coleta quando selecionados;
-- [X] Modal de conclusão de cadastro de ponto de coleta.
+* (Opcional) Mudança da cor dos botões de items de coleta;
+* (Opcional) Gradiente nos botões de items de coleta quando selecionados;
+* (Opcional) Modal de conclusão de cadastro de ponto de coleta.
 
 #### No Mobile &#128241;
 
-* Adição de ícone e splashscreen provisórios;
-* Correção no efeito de border-radius no ícone de flecha (tela Home);
-* Troca dos inputs de texto por inputs “select”, buscando da API do IBGE os estados e as cidades com base no anterior (tela Home);
-* Mudança do espaçamento, margens e border-radius dos inputs e botão (tela Home);
-* Adicionado emoji sorridente (tela Points);
-* Corrigido margem extra no último botão de item (tela Points);
-* Mudança da cor dos botões de itens de coleta (tela Points);
-* Gradiente nos botões de itens de coleta quando selecionados (tela Points);
-* Adicionado uma ponta nos pins do mapa (tela Points);
-* Mudança de cor do “Bem vindo.” (tela Points);
-* Aumento da altura da imagem (tela Detail);
-* Mudança de cor, tamanho e altura de linha dos textos (tela Detail);
+* (Problema) Correção no efeito de border-radius no ícone de flecha (tela Home);
+* (Problema) Correção na margem extra no último botão de item (tela Points);
+* (Problema) Correção nos botões de voltar para a tela anterior: eles ocupavam a alargura da tela inteira, quando o ícone que simboliza o retorno ocupa 24px;
+* (Opcional) Adição de ícone e splashscreen provisórios;
+* (Opcional) Troca dos inputs de texto por inputs “select”, buscando da API do IBGE os estados e as cidades com base no anterior (tela Home);
+* (Opcional) Mudança do espaçamento, margens e border-radius dos inputs e botão (tela Home);
+* (Opcional) Adicionado emoji sorridente (tela Points);
+* (Opcional) Mudança da cor dos botões de itens de coleta (tela Points);
+* (Opcional) Gradiente nos botões de itens de coleta quando selecionados (tela Points);
+* (Opcional) Adicionado uma ponta nos pins do mapa (tela Points);
+* (Opcional) Mudança de cor do “Bem vindo.” (tela Points);
+* (Opcional) Aumento da altura da imagem (tela Detail);
+* (Opcional) Mudança de cor, tamanho e altura de linha dos textos (tela Detail);
 
 ### Se tudo deu certo... &#127881;
 
