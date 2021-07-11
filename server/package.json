@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
+    "dev": "ts-node-dev --ignore-watch node_modules src/server.ts",
     "knex:seed": "knex --knexfile knexfile.ts seed:run",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "lucasmc64",
+  "license": "MIT",
   "dependencies": {
     "celebrate": "^12.1.1",
     "cors": "^2.8.5",
@@ -25,7 +25,7 @@
     "@types/hapi__joi": "^17.1.2",
     "@types/multer": "^1.4.3",
     "ts-node": "^8.10.2",
-    "ts-node-dev": "^1.0.0-pre.44",
+    "ts-node-dev": "^1.1.8",
     "typescript": "^3.9.3"
   }
 }

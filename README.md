@@ -1,157 +1,131 @@
-![Ecoleta Banner](./readme-images/capa.svg)
+![Ecoleta](readme-images/cover.png)
 
-# Ecoleta &#9851;
+# :recycle: Ecoleta
 
-*Esse foi um projeto desenvolvido durante a Next Level Week #01 (Booster).*
+> This was a project developed during Next Level Week #01 (Track: Booster).
 
-## O que é a Next Level Week? &#128640;
+## :rocket: What is Next Level Week?
 
-A [NLW](https://nextlevelweek.com/) é uma semana programada pela [Rocketseat](https://rocketseat.com.br/) na qual, através de aulas, lives, prática e com apoio da comunidade, vai te ajudar a dar o próximo passo na sua evolução como dev.
+The [NLW](https://nextlevelweek.com/) is a week programmed by [Rocketseat](https://rocketseat.com.br/) in which, through classes, lives, practice and with support from the community, it will help you take the next step in your evolution as a dev.
 
-## Qual a diferença entre Booster e Starter? &#9968;
+## :mountain: What is the difference between the Booster and Starter tracks?
 
-A NLW oferece duas frentes diferentes de acordo com conhecimento do aluno. 
+This edition of NLW offers two different fronts according to the student's knowledge:
 
-* O caminho “Starter” é para aqueles que estão no começo do aprendizado em desenvolvimento;
-* O caminho “Booster” é para aqueles que estão dispostos a ir um pouco mais além e que tem mais conceitos de desenvolvimento fixados. 
+- The “Starter” path is for those who are just beginning to learn application development;
+- The "Booster" path is for those who are willing to go a step further and who already have basic development concepts. 
 
-## Objetivo &#127919;
+## :dart: Goal
 
-Com um objetivo não apenas educacional, a princípio o projeto tem o intuito de ser um meio para ajudar as pessoas a encontrarem pontos de coleta de forma eficiente.
+Concerned about environmental pollution and how it will impact our lives in the future, Ecoleta arrives to help people find collection points for recycling efficiently, in order to avoid the waste disposal in a wrong way and promote the reuse of components.
 
-## Alguns detalhes &#128220;
+## :scroll: Some details
 
-* O backend é construído com Node.JS e SQLite.
-* O fontend é construído com o framework ReactJS.
-* O mobile é construído com o framework React Native e a plataforma Expo.
+- The back-end is built with Node.JS, Express and SQLite;
+- The font-end is built with the ReactJS framework.
+- The mobile is built with the React Native framework and the Expo platform.
 
-## Como rodar o projeto em minha máquina? &#129300;
+## :thinking: How do I run the project on my machine?
 
-O primeiro passo é clonar o projeto, seja via terminal ou GitHub Desktop, ou mesmo baixando o arquivo compactado (.zip). Após isso, siga adiante.
+The first step is to clone the project, either via terminal or GitHub Desktop, or even by downloading the compressed file (.zip). After that, go ahead.
 
-### Requisitos &#128736;
+### :hammer_and_wrench: Requirements
 
-* Ter o [Node.JS](https://nodejs.org/) instalado no seu computador.
-* (Opcional) Ter o [Yarn](https://yarnpkg.com/) instalado no seu computador.
+- [Node.JS](https://nodejs.org/).
+- (Optional) [Yarn](https://yarnpkg.com/).
 
-### Instalando dependências &#128269;
+### :mag: Installing dependencies
 
-Com o Node.JS instalado, acesse cada um dos diretórios (**server**, **web** e **mobile**) via terminal e rode o comando `npm install`. Caso você prefira usar o Yarn, basta rodar o comando `yarn`.
+With Node.JS installed, access each of the directories (**server**, **web** and **mobile**) via terminal and run the `npm install` command. If you prefer to use Yarn, just run the command `yarn`.
 
-### Rodando o Backend &#129405;
+### :goggles: Running the Back-end
 
-Acesse o diretório **backend** via terminal e digite `npm run dev` ou `yarn dev` e uma mensagem parecida com a seguinte aparecerá para você:
+Access the **server** directory via terminal, run the command `npm run dev` or ` yarn dev` and a message similar to the following will appear for you:
 
-![Resultado (backend) no terminal](./readme-images/backend.png)
+![Result of the command in the terminal](readme-images/backend.png)
 
-Obs.: Caso não tenha sido esse o resultado verifique que os requisitos e os passos anteriores tenham sido cumpridos.
+> If this was not the result, check that the requirements and previous steps have been met.
 
-### Rodando o Frontend &#10024;
+### :sparkles: Running the Front-end
 
-Acesse o diretório **frontend** via terminal e digite `npm start` ou `yarn start` e uma mensagem parecida com a seguinte aparecerá para você:
+Access the **frontend** directory via terminal, run `npm start` or `yarn start`. A message similar to the following will appear for you:
 
-![Resultado (frontend) do npm start no terminal](./readme-images/frontend.png)
+![Result of the command in the terminal](readme-images/frontend.png)
 
-Automaticamente, em seu navegador padrão, se abrirá uma aba para o link http://localhost:3000/ (onde o projeto estará rodando). Não se esqueça de deixar o backend redando em paralelo!
+Automatically, in your default browser, a tab will open for the link http://localhost:3000/ (where the project will be running).
 
-Obs.: Caso não tenha sido esse o resultado verifique que os requisitos e os passos anteriores tenham sido cumpridos.
+> If this was not the result, check that the requirements and previous steps have been fulfilled.
 
-### Rodando o Mobile &#128241;
+### :iphone: Running Mobile
 
-#### Requisitos &#128736;
+#### :hammer_and_wrench: Requirements
 
-* Aplicativo Expo instalado no seu smartphone ([Android](https://play.google.com/store/apps/details?id=host.exp.exponent) - [iOS](https://apps.apple.com/br/app/expo-client/id982107779));
-* [expo-cli](https://expo.io/learn) (Expo Command Line) instalado no seu computador.
+- Expo app: ([Android](https://play.google.com/store/apps/details?id=host.exp.exponent) - [iOS](https://apps.apple.com/br/app/expo-client/id982107779)).
+- [Expo Command Line](https://expo.io/learn).
 
-#### Passos &#129406;
+#### :hiking_boot: Steps
 
-Acesse o diretório **mobile** via terminal e digite `npm start` ou `yarn start`. Caso você não tenha instalado o expo-cli até então, aparecerá uma mensagem no terminal te informando isso e perguntando se você deseja instalá-lo. Basta digitar `Y` e dar `ENTER`. 
+Access the **mobile** directory via terminal and run `npm start` or ` yarn start`.
 
-![Quer instalar o expo-cli?](./readme-images/expo-cli.png)
+Then, a message similar to the following will appear for you:
 
-Em seguida (e caso já tivesse o expo-cli instalado), uma mensagem parecida com a seguinte aparecerá para você:
+![Expo-cli terminal](readme-images/mobile.png)
 
-![Parte 1 - expo-cli terminal](./readme-images/mobile-1.png)
-![Parte 2 - expo-cli terminal](./readme-images/mobile-2.png)
+Automatically, in your default browser, a tab will open for the link http://localhost:9002/ with the following screen:
 
-Automaticamente, em seu navegador padrão, se abrirá uma aba para o link http://localhost:9002/ com a seguinte tela:
+![Expo on browser](readme-images/browser-expo.png)
 
-![Expo no navegador](./readme-images/navegador-expo.png)
+As you can see, there is a QRCode both on the terminal and on the website that opened (they are the same). Now, open the Expo app on your smartphone, scan the QRCode and wait until the project is synchronized.
 
-Como vocês puderam reparar, há um QRCode tanto no terminal, quanto no site que se abriu (ele são iguais). Agora, abra o aplicativo Expo em seu smartphone, escaneie o QRCode e aguarde até que o projeto seja sincronizado.
+> If this was not the result, check that the requirements and previous steps have been fulfilled.
+### A few small details... :brain:
 
-Obs.: Caso não tenha sido esse o resultado verifique que os requisitos e os passos anteriores tenham sido cumpridos.
+#### :game_die: Database
 
-### Uns pequenos detalhes... &#129504;
+We have a few more things to do. As my intention in this project was purely educational, I uploaded the project together with my test database.
 
-#### Banco de dados &#127922;
+Ideally, before you run the project on your computer, do the following steps:
 
-Se tudo ocorreu bem até aqui, parabéns! Mas temos mais algumas coisinhas para fazer. Como minha intenção nesse projeto foi meramente educativo, eu subi o projeto juntamente com meu banco de dados de testes. 
+1. Open the folder *server/src/database/* and delete the archive *database.sqlite*.
+2. Open the folder *server/uploads/* and delete all files that do not have the extension *.svg*.
+3. Open the terminal in the folder *server* and run the following command: `npm run knex:migrate` or `yarn knex:migrate`.
+4. Still in the open terminal in the folder *server* and run the following command: `npm run knex:seed` or `yarn knex:seed`.
 
-O ideal seria, antes de você rodar o projeto no seu computador fazer os seguintes passos:
+#### :triangular_flag_on_post: Switching to your IP 
 
-1. Abrir a pasta */server/src/database/* e deletar o arquivo *database.sqlite*.
-2. Abrir a pasta */server/uploads/* e deletar todos os arquivos que não têm a extensão *.svg*.
-3. Abrir o terminal na pasta *server* e digitar o seguinte comando: `npm run knex:migrate` ou `yarn knex:migrate`.
-4. Ainda no terminal aberto na pasta *server* digite o seguinte comando: `npm run knex:seed` ou `yarn knex:seed`.
+As we are running the project locally, the routes are based on the computer's current IP, so it may be necessary to change them. But how do I know my IP of localhost? One way is, when you run the *mobile* project, when you open the browser window, look at the address on the left side of the site or in the browser bar:
 
-#### Trocando para o seu IP &#128681;
+![Endereço IP](readme-images/endereco-ip.png)
 
-Como estamos rodando o projeto localmente, as rotas são baseadas no IP atual do computador, por isso pode ser necessário trocá-los. Mas como eu sei o meu IP de localhost? Um meio é, quando você rodar o projeto *mobile*, quando abrir a janela do navegador, repare no endereço do lado esquerdo do site ou na barra do navegador:
+Above, in the blue rectangle, is your current local IP.
 
-![Endereço IP](./readme-images/endereco-ip.png)
+Follow the steps for replacement:
 
-Acima, no retângulo azul, está o seu IP local atual.
+##### :goggles: Back-end
 
-Segue os passos para a substituição:
+Access the *server* folder and change the IP in the following files:
 
-##### Backend &#129405;
+- *server/src/controllers/ItemsController.ts* - line 11.
+- *server/src/controllers/PointsController.ts* - line 15, line 33.
 
-Acesse a pasta *server* e mude o IP nos seguintes arquivos:
+##### :sparkles: Front-end
 
-* */server/src/controllers/ItemsController.ts* - linha 11.
-* */server/src/controllers/PointsController.ts* - linha 15, linha 33.
+There are no lines that need to be changed.
 
-##### Frontend &#10024;
+##### :iphone: Mobile
 
-Não há nenhuma linha que precise ser alterada.
+Access the *mobile* folder and change the IP in the following files:
 
-##### Mobile &#128241;
+* *mobile/src/services/api.ts* - line 4.
 
-Acesse a pasta *mobile* e mude o IP nos seguintes arquivos:
+## :tada: If everything went well...
 
-* */mobile/src/services/api.ts* - linha 4.
+Now you are running the project beautifully!
 
-### Mudanças pessoais no projeto &#128517;
+## :memo: License
 
-Além do que foi criado eu tentei deixar o projeto o mais próximo possível do protótipo, o que incluiu:
+This project is under the MIT license. See the [LICENSE](LICENSE) for more information.
 
-#### No Backend &#129405;
+---
 
-Nada foi alterado no backend.
-
-#### No Frontend &#10024;
-
-* (Opcional) Mudança da cor dos botões de items de coleta;
-* (Opcional) Gradiente nos botões de items de coleta quando selecionados;
-* (Opcional) Modal de conclusão de cadastro de ponto de coleta.
-
-#### No Mobile &#128241;
-
-* (Problema) Correção no efeito de border-radius no ícone de flecha (tela Home);
-* (Problema) Correção na margem extra no último botão de item (tela Points);
-* (Problema) Correção nos botões de voltar para a tela anterior: eles ocupavam a alargura da tela inteira, quando o ícone que simboliza o retorno ocupa 24px;
-* (Opcional) Adição de ícone e splashscreen provisórios;
-* (Opcional) Troca dos inputs de texto por inputs “select”, buscando da API do IBGE os estados e as cidades com base no anterior (tela Home);
-* (Opcional) Mudança do espaçamento, margens e border-radius dos inputs e botão (tela Home);
-* (Opcional) Adicionado emoji sorridente (tela Points);
-* (Opcional) Mudança da cor dos botões de itens de coleta (tela Points);
-* (Opcional) Gradiente nos botões de itens de coleta quando selecionados (tela Points);
-* (Opcional) Adicionado uma ponta nos pins do mapa (tela Points);
-* (Opcional) Mudança de cor do “Bem vindo.” (tela Points);
-* (Opcional) Aumento da altura da imagem (tela Detail);
-* (Opcional) Mudança de cor, tamanho e altura de linha dos textos (tela Detail);
-
-### Se tudo deu certo... &#127881;
-
-Agora você está com um banco de dados novinho em folha e com o **backend**, **frontend** e **mobile** rodando lindamente!
+Made with :white_heart: by Lucas Coutinho :wave: [Get in touch!](https://www.linkedin.com/in/lucasmc64/)
