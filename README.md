@@ -48,7 +48,7 @@ Access the **server** directory via terminal, run the command `npm run dev` or `
 
 ### :sparkles: Running the Front-end
 
-Access the **frontend** directory via terminal, run `npm start` or `yarn start`. A message similar to the following will appear for you:
+Access the **web** directory via terminal, run `npm start` or `yarn start`. A message similar to the following will appear for you:
 
 ![Result of the command in the terminal](readme-images/frontend.png)
 
@@ -78,7 +78,7 @@ Automatically, in your default browser, a tab will open for the link http://loca
 As you can see, there is a QRCode both on the terminal and on the website that opened (they are the same). Now, open the Expo app on your smartphone, scan the QRCode and wait until the project is synchronized.
 
 > If this was not the result, check that the requirements and previous steps have been fulfilled.
-### A few small details... :brain:
+### :brain: A few small details...
 
 #### :game_die: Database
 
@@ -95,7 +95,7 @@ Ideally, before you run the project on your computer, do the following steps:
 
 As we are running the project locally, the routes are based on the computer's current IP, so it may be necessary to change them. But how do I know my IP of localhost? One way is, when you run the *mobile* project, when you open the browser window, look at the address on the left side of the site or in the browser bar:
 
-![Endereço IP](readme-images/endereco-ip.png)
+![IP Address](readme-images/ip.png)
 
 Above, in the blue rectangle, is your current local IP.
 
